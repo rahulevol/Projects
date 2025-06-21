@@ -1,5 +1,11 @@
 # AI-Powered Resume Ranker - Streamlit Version
 # Objective: Rank resumes against a job description using NLP with Streamlit UI
+import subprocess
+try:
+    nlp = spacy.load("en_core_web_sm")
+except:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 import os
 import spacy
